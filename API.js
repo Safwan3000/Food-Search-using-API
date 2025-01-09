@@ -34,8 +34,12 @@ document.getElementById('searchButton').addEventListener('click', async () => {
     }
 });
 
-function displayMeals(meals, append = false){
-    const resultsContainer = document.getElementsById('mealResults');
+function displayMeals(meals, append = false) {
+    const resultsContainer = document.getElementById('mealResults');
+
+    if (!append) {
+        resultsContainer.innerHTML = '';
+    }
 
     meals.forEach(meal => {
         const card = document.createElement('div');
@@ -50,5 +54,6 @@ function displayMeals(meals, append = false){
                 </div>
             </div>
         `;
+        resultsContainer.appendChild(card);
     });
 }
