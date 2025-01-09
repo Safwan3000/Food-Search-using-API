@@ -33,3 +33,22 @@ document.getElementById('searchButton').addEventListener('click', async () => {
         resultsContainer.innerHTML = '<p class="text-danger">An error occurred. Please try again.</p>';
     }
 });
+
+function displayMeals(meals, append = false){
+    const resultsContainer = document.getElementsById('mealResults');
+
+    meals.forEach(meal => {
+        const card = document.createElement('div');
+        card.className = 'col-md-4 meal-card';
+        card.innerHTML = `
+            <div class="card">
+                <img src="${meal.strMealThumb}" class="card-img-top meal-image" alt="${meal.strMeal}">
+                <div class="card-body">
+                    <h5 class="card-title">${meal.strMeal}</h5>
+                    <p><strong>Meal ID:</strong> ${meal.idMeal}</p>
+                    <p><strong>Instructions:</strong> ${meal.strInstructions.substring(0, 100)}...</p>
+                </div>
+            </div>
+        `;
+    });
+}
