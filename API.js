@@ -28,3 +28,8 @@ document.getElementById('searchButton').addEventListener('click', async () => {
         } else {
             resultsContainer.innerHTML = '<p class="text-danger">No meals found!</p>';
         }
+    } catch (error) {
+        console.error('Error fetching meals:', error);
+        resultsContainer.innerHTML = '<p class="text-danger">An error occurred. Please try again.</p>';
+    }
+});
