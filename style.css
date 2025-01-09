@@ -21,3 +21,16 @@ main {
     flex: 1;
     padding: 2rem;
 }
+.meal-card {
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.meal-image {
+    max-height: 200px;
+    object-fit: cover;
+}
+.card-body
+{
+    background-color: #1079e3;
+    color: rgb(254, 175, 2);
+}
